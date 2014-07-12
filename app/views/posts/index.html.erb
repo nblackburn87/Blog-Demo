@@ -1,0 +1,13 @@
+<div id="new-post">
+  <%= link_to "New Post", new_post_path, :class => "btn btn-success" %>
+</div>
+
+<h2><%= current_user.email %>'s Posts</h2>
+
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-sm-6 col-md-4">
+          <p><%= link_to "#{listing.title}", listing_path(listing), :class => "btn btn-primary" %></p>
+    </div>
+  <% end %>
+</div>

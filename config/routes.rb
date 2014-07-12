@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   match '/home', { :via => :get, :to => 'pages#home' }
 
   devise_for :users
+  resources :users
+  resources :posts
  
 end
