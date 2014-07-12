@@ -1,0 +1,13 @@
+<div id="new-post">
+  <%= link_to "New Post", new_post_path, :class => "btn btn-success" %>
+</div>
+
+<h2><%= current_user.email %>'s Posts</h2>
+
+<div class="row">
+  <% current_user.posts.each do |post| %>
+    <div class="col-sm-12 col-md-">
+          <p><%= "#{post.title}" %></p>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,17 @@
+<%= render '/layouts/errors', object: @post %>
+
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+    </div>
+  </div><br><br><br>
+  <div class="form-group">
+    <div class="col-md-6">
+      <%= f.text_area :body, :size => "30x20", class: "form-control", placeholder: "Your post goes here:" %>
+    </div>
+  </div><br><br>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
