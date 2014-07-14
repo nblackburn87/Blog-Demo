@@ -6,8 +6,14 @@
 
 <div class="row">
   <% @posts.each do |post| %>
-    <div class="col-sm-6 col-md-4">
-          <p><%= link_to "#{listing.title}", listing_path(listing), :class => "btn btn-primary" %></p>
-    </div>
+    <ul>
+      <h4><%= link_to "#{post.title}", post_path(post) %>
+      <%= link_to "Edit Post", edit_post_path(post), class: "btn btn-success btn-xs" %>
+      <%= link_to "Delete Post", post_path(post),
+                                 data: { confirm: "Are you sure?" },
+                                 method: "delete",
+                                 :class => "btn btn-warning btn-xs" %>
+      </h4> 
+    </ul>
   <% end %>
 </div>
