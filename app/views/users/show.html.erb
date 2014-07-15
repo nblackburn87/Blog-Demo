@@ -4,8 +4,16 @@
 
 <h2><%= current_user.email %>'s Posts</h2>
 
+<% posts.each do |post| %>
+  <% if post.user_id == nil %>
+    <% autoposts << post %>
+  <% end %>
+<% end %>
+
+<% autoposts << current_user.posts %>
+
 <div class="row">
-  <% current_user.posts.each do |post| %>
+  <% autoposts.each do |post| %>
     <div class="col-sm-12 col-md-">
           <p><%= "#{post.title}" %></p>
     </div>
