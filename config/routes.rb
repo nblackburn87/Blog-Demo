@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
-
-  match '/home', { :via => :get, :to => 'pages#home' }
-
+  
+  devise_scope :user do
+    root :to => 'devise/sessions#new'
+  end
+ 
   devise_for :users
   resources :users
   resources :posts
